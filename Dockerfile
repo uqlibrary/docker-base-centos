@@ -16,7 +16,7 @@ RUN \
 RUN \
   yum update -y && \
   yum install -y \
-    python-setuptools \
+    python36-pip \
     hostname \
     inotify-tools \
     wget \
@@ -27,7 +27,6 @@ RUN \
     groff \
     jq && \
   yum clean all && \
-  easy_install supervisor && \
-  easy_install pip && \
-  pip install awscli && \
+  pip3 install supervisor && \
+  pip3 install awscli && \
   rpm -ivh "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm"
