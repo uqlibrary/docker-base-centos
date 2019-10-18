@@ -10,8 +10,9 @@ COPY ssm-session /usr/bin/ssm-session
 RUN \
   chmod 755 /usr/bin/ssm-session && \
   ln -sf /usr/share/zoneinfo/Australia/Brisbane /etc/localtime && \
-  rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm && \
-  rpm -Uvh https://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-15.ius.centos7.noarch.rpm
+  rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
+  rpm -Uvh https://repo.ius.io/ius-release-el7.rpm
+  
 
 RUN \
   yum update -y && \
