@@ -1,4 +1,4 @@
-FROM centos:7.6.1810
+FROM centos:7
 
 ENV HOME /root
 
@@ -30,4 +30,5 @@ RUN \
   yum clean all && \
   pip3 install supervisor && \
   pip3 install awscli && \
+  ln -s /usr/local/bin/aws /usr/bin/aws && \
   rpm -ivh "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm"
