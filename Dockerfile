@@ -34,5 +34,6 @@ RUN \
   unzip awscliv2.zip && \
   /tmp/aws/install && \
   aws --version && \
+  rm -rf /tmp/aws* && \
   ln -s /usr/local/bin/aws /usr/bin/aws && \
   rpm -ivh "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm"
