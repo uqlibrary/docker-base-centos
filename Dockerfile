@@ -29,6 +29,10 @@ RUN \
     jq && \
   yum clean all && \
   pip3 install supervisor && \
-  pip3 install awscli && \
+  cd /tmp && \
+  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+  unzip awscliv2.zip && \
+  /tmp/aws/install && \
+  aws --version && \
   ln -s /usr/local/bin/aws /usr/bin/aws && \
   rpm -ivh "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm"
